@@ -1,0 +1,27 @@
+<header role="article-header">
+  <h1 class="title">{{ page.title }}</h1>
+  {% if page.header.lead %}<div class="lead">{{ page.header.lead }}</div>{% endif %}
+</header>
+
+{% if page.content %}
+  <article role="article-content">
+    {% if page.header.background and page.header.my_role %}
+      <div class="case-top">
+        <div class="case-background">
+          <h2>Bakgrund</h2>
+          <p>{{ page.header.background }}</p>
+        </div>
+        <div class="case-role">
+          <h2>Min roll</h2>
+          <p>{{ page.header.my_role }}</p>
+        </div>
+      </div>
+    {% elseif page.header.background or page.header.my_role %}
+      {% set box_title = page.header.background ? 'Bakgrund' : 'Min roll' %}
+      <h2>{{ box_title }}</h2>
+      <p>{{ page.header.background }}{{page.header.my_role}}</p>
+    {% endif %}
+
+    {{ page.content }}
+  </article>
+{% endif %}

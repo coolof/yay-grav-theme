@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="56px" height="14px" viewBox="0 0 18 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.1 (15681) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow-green-right</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Home" sketch:type="MSArtboardGroup" transform="translate(-555.000000, -482.000000)" stroke="#6DF4A9" stroke-width="2">
+            <g id="Intro" sketch:type="MSLayerGroup" transform="translate(160.000000, 224.000000)">
+                <g id="Button" transform="translate(0.000000, 233.000000)" sketch:type="MSShapeGroup">
+                    <path d="M395,32 L410.5,32 M405,26 L411,32 L405,38" id="arrow-green-right"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

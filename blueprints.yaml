@@ -1,0 +1,13 @@
+name: Yay
+version: 0.1.0
+description: "Yay.se grav theme"
+icon: empire
+author:
+  name: Olof Brickarp
+  email: olle@yay.se
+  url: http://yay.se
+homepage: http://yay.se
+demo:
+keywords:
+bugs: 
+license: Copyright 2015 Olof Brickarp

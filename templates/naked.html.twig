@@ -1,0 +1,16 @@
+{% extends 'partials/base-naked.html.twig' %}
+
+{% block content %}
+  {% include 'partials/postcontent.html.twig' %}
+
+  {% for child in page.collection %}
+    {% include 'partials/portfolio-item.html.twig' with {'page':child} %}
+  {% endfor %}
+
+  {% if not page.header.hide_bio %}
+    <div class="bio">
+      <img src="{{ theme_url }}/img/logo.svg" alt="Olle" />
+      {{ site.bio_en }}
+    </div>
+  {% endif %}
+{% endblock %}

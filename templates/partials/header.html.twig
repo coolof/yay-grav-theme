@@ -1,0 +1,15 @@
+<header role="site-header">
+  <a href="{{ base_url }}">
+    <img class="logo" src="{{ theme_url }}/img/logo.svg" />
+    <img class="logo-legacy" src="{{ theme_url }}/img/logo.png" />
+  </a>
+
+  <nav class="menu" role="main-menu">
+    {% for page in pages.children %}
+      {% if page.visible %}
+        {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
+        <div class="item {{ current_page }}"><a href="{{ page.url }}">{{ page.menu }}</a></div>
+      {% endif %}
+    {% endfor %}
+  </nav>
+</header>

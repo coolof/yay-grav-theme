@@ -1,0 +1,9 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+  {% include 'partials/postcontent.html.twig' %}
+
+  {% for child in page.collection %}
+    {% include 'partials/portfolio-item.html.twig' with {'page':child} %}
+  {% endfor %}
+{% endblock %}

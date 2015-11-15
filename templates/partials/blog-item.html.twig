@@ -1,0 +1,14 @@
+{% set preview = page.header.preview %}
+{% set page_title = page.title %}
+
+<a class="row" href="{{ page.url }}">
+
+  {{ page.media[preview].html(page_title, 'preview_image') }}
+
+  <div class="date">{{ page.date|nicetime(false) }} <span>({{ page.date|date("d/m/Y") }})</span></div>
+  <h2>{{ page_title }}</h2>
+
+  {% if page.header.desc %}
+    <div class="desc">{{ page.header.desc }}</div>
+  {% endif %}
+</a>

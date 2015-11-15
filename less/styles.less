@@ -1,0 +1,497 @@
+@import "mixins.less";
+
+body {
+  background-color: #fff;
+  color: #3e3e3e;
+  font-family: @font;
+  font-size: @fz;
+  line-height: @lh;
+  font-weight: @fw;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+ -webkit-box-sizing: border-box;
+ -moz-box-sizing: border-box;
+ box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: @theme-dark;
+
+  &:hover {
+    color: @theme;
+  }
+}
+
+h1,h2,h3,h4,h5,h6,.lead,p,ul{
+  max-width: @text-width;
+}
+
+@keyframes powpow {
+  0% {
+    left: 0px;
+    margin-left: 0px;
+  }
+  100% {
+    left: 100%;
+    margin-left: -@gutter*2;
+  }
+}
+
+h1 {
+  position: relative;
+  font-size: 50px;
+  line-height: 1.125em;
+  margin: 0px 0px @gutter*2;
+  font-weight: @fw;
+
+  span {
+    color: @gray2;
+  }
+
+  &:after {
+    content: '';
+    //animation: powpow 0.3s 0s ease-in-out infinite alternate;
+    position: absolute;
+    left: 0px;
+    bottom: -@gutter;
+    width: @gutter*2;
+    height: 2px;
+    background-color: @gray3;
+  }
+}
+
+.lead {
+  color: @gray2;
+  font-size: 32px;
+  line-height: 1.25em;
+  font-weight: @fw;
+  margin: 0px 0px @gutter*2;
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 1.2em;//48px
+  font-weight: @fw;
+  margin: @gutter*1.5 0px @gutter/2;
+}
+
+h3 {
+  font-size: 27px;
+  line-height: 1.2em;//32px
+  font-weight: bold;
+  margin: @gutter*1.5 0px @gutter/2;
+}
+
+p {
+  margin: 0 0 @gutter;
+
+  &.p-img {
+    max-width: none;
+    margin: @gutter*1.5 0;
+    color: @gray2;
+    font-size: 18px;
+    line-height: 1.5em;
+    vertical-align: top;
+  }
+}
+
+blockquote {
+  margin: @gutter 0;
+  max-width: @code-width;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Warning */
+  > blockquote > blockquote > p {
+    .border-radius();
+    .content-box();
+    background: rgb(255, 238, 149);
+    color: spin(darken(rgb(255, 238, 149),55%),-10deg);
+    padding: @gutter;
+    border-left: @gutter/2 solid darken(rgb(255, 238, 149),10%);
+
+    a {
+      color: spin(darken(rgb(255, 238, 149),55%),-10deg);
+      text-decoration: underline;
+
+      &:hover {
+        color: spin(darken(rgb(255, 238, 149),45%),-10deg);
+      }
+    }
+  }
+
+  /* Info */
+  > blockquote > blockquote > blockquote > p {
+    .border-radius();
+    .content-box();
+    background: rgb(176, 224, 255);
+    color: darken(rgb(176, 224, 255),50%);
+    padding: @gutter;
+    border-left: @gutter/2 solid darken(rgb(176, 224, 255),15%);
+
+    a {
+      color: darken(rgb(176, 224, 255),50%);;
+      text-decoration: underline;
+
+      &:hover {
+        color: darken(rgb(176, 224, 255),40%);;
+      }
+    }
+  }
+}
+
+/* Code (highlight.js) */
+pre {
+  //max-width: @code-width;
+  margin: 0 0 @gutter;
+
+  code {
+    .border-radius();
+    font-family: @font-mono;
+    font-size: 18px;
+    line-height: 1.5em;
+    //border: 1px solid @gray4;
+  }
+
+  /* Fix highlight styles */
+  .hljs {
+    padding: @gutter;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Button style */
+.button {
+  .border-radius();
+  display: inline-block;
+  position: relative;
+  border: 1px solid @theme;
+  max-width: 100%;
+  white-space: nowrap;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: @gutter*2 - 2;
+  padding: 0px @gutter*2 0 @gutter/1.5;
+  overflow: hidden;
+  vertical-align: top;
+  //Fix overflow issue, hmmm
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: @gutter*2 - @gutter/4;
+    top: 0px;
+    bottom: 0px;
+    width: @gutter/4;
+    background: linear-gradient(fade(#fff,0%),#fff);
+  }
+
+  &.button-full {
+    width: 100%;
+  }
+
+  &.button-medium {
+    min-width: 65.2173913%;
+    max-width: 65.2173913%;
+  }
+
+  &.i-arrow-right {
+    background: transparent url(../img/arrow-green-right.svg) no-repeat right center;
+  }
+  &.i-download {
+    background: transparent url(../img/dowload-icon-green.svg) no-repeat right center;
+  }
+}
+
+/* --- Set container width --- */
+header[role="site-header"],
+section[role="site-content"],
+footer[role="site-footer"] .inner {
+  .contain();
+}
+
+@keyframes logospin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* --------------------
+  Page header
+-------------------- */
+header[role="site-header"] {
+  .cf();
+  background-color: #fff;
+  padding-top: @gutter*2;
+  padding-bottom: @gutter*3;
+  text-align: center;
+
+  .logo {
+    float: left;
+    height: 64px;
+    width: auto;
+    animation: logospin 6s linear infinite;
+  }
+
+  .logo-legacy {
+    display: none;
+  }
+
+  .menu {
+    float: right;
+    text-align: right;
+    padding-top: 20px;
+    font-size: 20px;
+    line-height: 1.2em;
+    font-weight: normal;
+
+    .item {
+      display: inline-block;
+      margin: 0 0px 0px 20px;
+
+      a {
+        color: @gray2;
+
+        &:hover {
+          color: @gray1;
+        }
+      }
+
+      &.active a {
+        color: @gray1;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+
+
+/* --------------------
+  Page content (article)
+-------------------- */
+article[role="article-content"] {
+  margin: @gutter*2 0 @gutter*2;
+
+  /* --- Case top (if both background and role) --- */
+  .case-top {
+    .cf();
+    margin: 0 -@gutter @gutter;
+
+    div {
+      float: left;
+      width: 50%;
+      padding: 0 @gutter;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+
+
+/* --------------------
+  Projects list
+-------------------- */
+.portfolio-list {
+  .clearfix();
+  margin: @gutter*3 -@gutter/2 @gutter;
+
+  .row {
+    position: relative;
+    disp: block;
+    width: 50%;
+    float: left;
+    overflow: hidden;
+    padding: 0 @gutter/2 @gutter;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 1.2em;
+
+    &.size-large {
+      width: 66.6666666%;
+    }
+
+    a {
+      display: block;
+      color: @gray2;
+
+      &:hover {
+        color: @theme-dark;
+      }
+    }
+
+    img {
+      transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+      position: relative;
+      z-index: 10;
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-bottom: 16px;
+    }
+
+    &:hover {
+      color: @theme;
+    }
+  }
+}
+
+
+
+/* ------------------------
+  Blog list
+------------------------ */
+.thoughts-list {
+  margin: 0 0 -@gutter;
+
+  .row {
+    display: block;
+    padding: @gutter 0px;
+    border-bottom: 1px solid #ddd;
+    background: transparent url(../img/arrow-gray-right-big.svg) no-repeat right center;
+
+    .date {
+      font-size: 22px;
+      line-height: 1.3em;
+      color: @gray2;
+      margin: 0px;
+    }
+
+    h2 {
+      margin: 0;
+    }
+
+    .desc {
+      margin: @gutter/4 0 0;
+      color: @gray1;
+    }
+
+    &:first-child {
+      padding-top: 0px;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+
+
+/* --------------
+  Footer
+-------------- */
+footer[role="site-footer"] {
+  margin-top: @gutter*3;
+  padding-top: @gutter*3;
+  padding-bottom: @gutter*3;
+  background-color: #f5f5f5;
+  background: linear-gradient(45deg, @gray4, #f5f5f5);
+  //background: linear-gradient(30deg, #4ED9E7, @theme);
+
+  .inner {
+    position: relative;
+  }
+
+  a {
+    color: @gray1;
+    text-decoration: underline;
+  }
+
+  .social {
+    margin-top: @gutter/2;
+  }
+
+  .footer-logo {
+    //.border-radius(50%);
+    position: absolute;
+    right: @gutter;
+    top: @gutter/4;
+    width: @gutter*2;
+    height: @gutter*2;
+    //border: 12px solid @gray3;
+    background: transparent url(../img/logo.svg) no-repeat center center;
+  }
+}
+
+
+/* --------------
+  Naked page
+-------------- */
+.page-naked {
+  h1,
+  h2,
+  h3,
+  h4,
+  .lead,
+  p,
+  blockquote {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h1 {
+    text-align: center;
+
+    &:after {
+      left: 50%;
+      margin-left: -@gutter;
+    }
+  }
+
+  .lead {
+    text-align: center;
+  }
+
+  p.p-img {
+    text-align: center;
+  }
+
+  header[role="site-header"] {
+    padding-bottom: @gutter*2;
+    line-height: 0;
+
+    .logo {
+      float: none;
+      margin: 0 auto;
+    }
+  }
+
+  footer[role="site-footer"] {
+    text-align: center;
+
+    .footer-logo {
+      position: static;
+      display: block;
+      margin: 0 auto;
+      left: auto;
+      right: auto;
+      margin-bottom: @gutter;
+    }
+  }
+}

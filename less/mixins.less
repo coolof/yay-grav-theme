@@ -1,0 +1,67 @@
+@theme: #6DF4A9;
+@theme-light: #A6FAD4;
+@theme-dark: #5DE097;
+
+@gray1: #2e2e2e;
+@gray2: #8e8e8e;
+@gray3: #cecece;
+@gray4: #eaeaea;
+
+@max-width: 1120px;
+@text-width: 736px;
+@code-width: 832px;
+@gutter: 32px;
+@bw: 1px;
+
+@font: "Effra", sans-serif;
+@font-mono: "Fira Mono", monospace;
+@fz: 22px;
+@lh: 1.45454545em;
+@fw: 300;
+
+.clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+.cf() {
+  .clearfix();
+}
+
+//Contain
+.contain {
+  .content-box();
+  max-width: @max-width;
+  margin: 0px auto;
+  padding: 0px @gutter;
+}
+
+//Border radius
+.border-radius(@var: 2px) {
+  -webkit-border-radius: @var;
+  -moz-border-radius: @var;
+  -ms-border-radius: @var;
+  -o-border-radius: @var;
+  border-radius: @var;
+}
+
+//Box shadow
+.box-shadow(@var: ~"0px 1px 3px rgba(0,0,0,0.5)") {
+  -webkit-box-shadow: e(@arguments);
+  -moz-box-shadow: e(@arguments);
+  box-shadow: e(@arguments);
+}
+
+//Border box and content box
+.border-box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.content-box {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}

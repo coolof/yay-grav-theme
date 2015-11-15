@@ -1,0 +1,14 @@
+{% set preview = page.header.preview %}
+{% set page_title = page.title %}
+{% set case_color = page.header.color %}
+
+<div class="row {#{% if page.header.preview_style %}style-{{ page.header.preview_style }}{% endif %} {% if page.header.size %}size-{{ page.header.size }}{% endif %}#}">
+  {#<div class="inner" style="background-color: #{{ case_color }};">#}
+  <a href="{{ page.url }}">
+
+    {{ page.media[preview].html(page_title, 'preview_image') }}
+
+    <div class="item-title">{{ page_title }}</div>
+  </a>
+  {#</div>#}
+</div>
