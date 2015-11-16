@@ -223,6 +223,42 @@ img {
 .button.i-download {
   background: transparent url(../img/dowload-icon-green.svg) no-repeat right center;
 }
+/* --- Bio --- */
+.bio {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  max-width: 736px;
+  margin: 0 auto;
+  vertical-align: middle;
+  display: table;
+}
+.bio:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.bio img {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  max-width: 144px;
+  height: auto;
+  display: table-cell;
+  float: left;
+  margin-right: 32px;
+  vertical-align: middle;
+  padding: 8px;
+  border: 2px solid #eaeaea;
+}
+.bio .bio-text {
+  display: table-cell;
+  vertical-align: middle;
+}
 /* --- Set container width --- */
 header[role="site-header"],
 section[role="site-content"],

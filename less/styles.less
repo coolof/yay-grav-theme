@@ -214,6 +214,37 @@ img {
   }
 }
 
+
+/* --- Bio --- */
+.bio {
+  .cf();
+  .border-radius();
+  max-width: @text-width;
+  margin: 0 auto;
+  //border: 2px solid @gray4;
+  //padding: @gutter;
+  vertical-align: middle;
+  display: table;
+
+  img {
+    .border-radius(50%);
+    max-width: @gutter*4.5;
+    height: auto;
+    display: table-cell;
+    float: left;
+    margin-right: @gutter;
+    vertical-align: middle;
+    padding: @gutter/4;
+    border: 2px solid @gray4;
+  }
+
+  .bio-text {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+
 /* --- Set container width --- */
 header[role="site-header"],
 section[role="site-content"],
