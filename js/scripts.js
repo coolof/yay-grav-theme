@@ -1,10 +1,8 @@
-$(document).ready(function(){
-  $('p:has(img)').addClass('p-img');
-
+$(document).ready(function() {
+  /* Add classes to p width image */
   $('p:has(img)').each(function() {
     var imgClass = $(this).find('img').attr('class');
 
-    console.log(imgClass);
     $(this).addClass('p-img ' + imgClass);
   });
 });
