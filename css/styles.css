@@ -95,7 +95,13 @@ h2 {
 h3 {
   font-size: 27px;
   line-height: 1.2em;
-  font-weight: bold;
+  font-weight: 600;
+  margin: 48px 0px 16px;
+}
+h4 {
+  font-size: 22px;
+  line-height: 1.09em;
+  font-weight: 600;
   margin: 48px 0px 16px;
 }
 p {
@@ -108,6 +114,9 @@ p.p-img {
   font-size: 18px;
   line-height: 1.5em;
   vertical-align: top;
+}
+strong {
+  font-weight: 600;
 }
 blockquote {
   margin: 32px 0;
