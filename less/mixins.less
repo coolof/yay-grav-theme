@@ -19,6 +19,13 @@
 @lh: 1.45454545em;
 @fw: 300;
 
+@easing: cubic-bezier(0.77, 0, 0.175, 1);
+
+@retina:  ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
+          ~"only screen and (min--moz-device-pixel-ratio: 1.5)",
+          ~"only screen and (-o-min-device-pixel-ratio: 3/2)",
+          ~"only screen and (min-device-pixel-ratio: 1.5)";
+
 .clearfix() {
   &:after {
     content: "";

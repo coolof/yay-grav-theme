@@ -5,4 +5,9 @@ $(document).ready(function() {
 
     $(this).addClass('p-img ' + imgClass);
   });
+
+  /* Start anim class */
+  $('.animated').click(function() {
+    $(this).toggleClass('playing');
+  });
 });
