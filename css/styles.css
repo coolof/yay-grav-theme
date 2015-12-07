@@ -94,9 +94,9 @@ h2 {
   margin: 48px 0px 16px;
 }
 h3 {
-  font-size: 27px;
-  line-height: 1.2em;
-  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.25em;
+  font-weight: 300;
   margin: 48px 0px 16px;
 }
 h4 {
@@ -171,6 +171,17 @@ blockquote > blockquote > blockquote > blockquote > p a:hover {
   color: #008ae3;
 }
 /* Code (highlight.js) */
+code {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  background-color: #f8f8f8;
+  border: 1px solid #eaeaea;
+  padding: 0px 4px 4px;
+  font-size: 18px;
+}
 pre {
   margin: 0 0 32px;
   /* Fix highlight styles */
@@ -183,7 +194,8 @@ pre code {
   border-radius: 2px;
   font-family: "Fira Mono", monospace;
   font-size: 18px;
-  line-height: 1.5em;
+  line-height: 1.3333333333em;
+  border: none;
 }
 pre .hljs {
   padding: 32px;
@@ -191,6 +203,30 @@ pre .hljs {
 img {
   max-width: 100%;
   height: auto;
+}
+img.img-shadow {
+  -webkit-box-shadow: 0px 1px 4px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0px 1px 4px rgba(0,0,0,0.25);
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.25);
+}
+p.img-border {
+  position: relative;
+}
+p.img-border:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.1);
+  -moz-box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.1);
+  box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.1);
+  pointer-events: none;
+}
+p.img-border img {
+  display: block;
 }
 /* Button style */
 .button {
@@ -411,6 +447,39 @@ article[role="article-content"] .case-top p {
 }
 .portfolio-list .row:hover {
   color: #6df4a9;
+}
+/* --- Small --- */
+.portfolio-list-more {
+  position: relative;
+  padding-top: 64px;
+  padding-bottom: 64px;
+  margin: 64px -16px 32px;
+}
+.portfolio-list-more:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.portfolio-list-more:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0px;
+  left: 50%;
+  width: 100vw;
+  height: 100%;
+  margin-left: -50vw;
+  background-color: #cdfce7;
+}
+.portfolio-list-more h2 {
+  text-align: center;
+  max-width: none;
+  margin: 0 auto 32px;
+}
+.portfolio-list-more .row {
+  float: left;
+  width: 20%;
+  padding: 0 16px 32px;
 }
 /* ------------------------
   Blog list

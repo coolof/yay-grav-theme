@@ -1,0 +1,8 @@
+{% set logo = page.header.logo %}
+{% set page_title = page.title %}
+
+<div class="row">
+  <a href="{{ page.header.link }}">
+    {{ page.media[logo].html(page_title, 'preview_image') }}
+  </a>
+</div>
