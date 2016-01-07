@@ -13,4 +13,11 @@
       <div class="bio-text">{{ site.bio_en }}</div>
     </div>
   {% endif %}
+
+  {% if not page.header.hode_comments %}
+    <div class="comments">
+      <h2 class="title">Leave a comment</h2>
+      {{ jscomments('disqus', { shortname: "yayse" }) }}
+    </div>
+  {% endif %}
 {% endblock %}

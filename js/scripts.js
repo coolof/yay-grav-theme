@@ -4,6 +4,10 @@ $(document).ready(function() {
     var imgClass = $(this).find('img').attr('class');
 
     $(this).addClass('p-img ' + imgClass);
+
+    if($(this).hasClass('img-border')) {
+      $(this).find('img').wrap('<div class="img-container">');
+    }
   });
 
   /* Start anim class */

@@ -25,6 +25,7 @@ body {
   font-weight: 300;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 * {
@@ -69,6 +70,7 @@ h1 {
   font-weight: 300;
 }
 h1 span {
+  display: block;
   color: #8e8e8e;
 }
 h1:after {
@@ -209,10 +211,11 @@ img.img-shadow {
   -moz-box-shadow: 0px 1px 4px rgba(0,0,0,0.25);
   box-shadow: 0px 1px 4px rgba(0,0,0,0.25);
 }
-p.img-border {
+p.img-border .img-container {
+  display: inline-block;
   position: relative;
 }
-p.img-border:before {
+p.img-border .img-container:before {
   content: "";
   display: block;
   position: absolute;
@@ -469,7 +472,7 @@ article[role="article-content"] .case-top p {
   width: 100vw;
   height: 100%;
   margin-left: -50vw;
-  background-color: #cdfce7;
+  background-color: #e1fcf0;
 }
 .portfolio-list-more h2 {
   text-align: center;
@@ -714,4 +717,18 @@ footer[role="site-footer"] .footer-logo {
   -o-animation-play-state: running;
   animation-play-state: running;
   opacity: 1;
+}
+/* Full width example */
+.full-width {
+  position: relative;
+}
+.full-width:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 0px;
+  width: 100vw;
+  margin-left: -50vw;
+  background-color: #ff00ff;
 }

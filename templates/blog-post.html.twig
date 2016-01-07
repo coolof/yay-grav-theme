@@ -4,4 +4,9 @@
 
   {% include 'partials/postcontent.html.twig' %}
 
+  {% if not page.header.hide_comments %}
+    <h2 class="title">Lämna en kommentar</h2>
+    {{ jscomments('disqus', { shortname: "yayse" }) }}
+  {% endif %}
+
 {% endblock %}
