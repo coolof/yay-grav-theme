@@ -1,0 +1,31 @@
+{% if pagination|length > 1 %}
+<div class="pager" id="blog-pager">
+  <ul>
+    <li class="pager-prev">
+      {% if pagination.hasPrev %}
+        <a rel="prev" href="{{ base_url }}{{ pagination.params }}{{ pagination.prevUrl }}">&laquo;</a>
+      {% else %}
+        &laquo;
+      {% endif %}
+    </li>
+
+    {% for paginate in pagination %}
+      <li>
+        {% if paginate.isCurrent %}
+          <span class="current">{{ paginate.number }}</span>
+        {% elseif paginate.isInDelta %}
+          <a href="{{ base_url }}{{ pagination.params }}{{ paginate.url }}">{{ paginate.number }}</a>
+        {% endif %}
+      </li>
+    {% endfor %}
+
+    <li class="pager-prev">
+      {% if pagination.hasNext %}
+        <a rel="prev" href="{{ base_url }}{{ pagination.params }}{{ pagination.nextUrl }}">&raquo;</a>
+      {% else %}
+        &raquo;
+      {% endif %}
+    </li>
+  </ul>
+</div>
+{% endif %}

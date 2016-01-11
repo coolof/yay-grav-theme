@@ -29,8 +29,11 @@ a {
   }
 }
 
-h1,h2,h3,h4,h5,h6,.lead,p,ul{
-  max-width: @text-width;
+header[role="article-header"],
+article[role="article-content"] {
+  h1,h2,h3,h4,h5,h6,.lead,p,ul {
+    max-width: @text-width;
+  }
 }
 
 @keyframes powpow {
@@ -428,6 +431,10 @@ article[role="article-content"] {
       display: block;
       color: @gray2;
 
+      h4 {
+        color: @gray1;
+      }
+
       &:hover {
         text-decoration: none;
         color: @theme-dark;
@@ -442,6 +449,10 @@ article[role="article-content"] {
       width: 100%;
       height: auto;
       margin-bottom: 16px;
+    }
+
+    h4 {
+      margin: 0 0 @gutter/4;
     }
 
     &:hover {
@@ -489,7 +500,7 @@ article[role="article-content"] {
   Blog list
 ------------------------ */
 .thoughts-list {
-  margin: 0 0 -@gutter;
+  margin: @gutter*3 0 -@gutter;
 
   .row {
     display: block;
@@ -524,6 +535,88 @@ article[role="article-content"] {
     &:last-child {
       border-bottom: none;
     }
+  }
+}
+
+.pager {
+  margin-top: @gutter*2;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 0;
+    line-height: 0;
+
+    li {
+      list-style: none;
+      list-style-image: none;
+      display: inline-block;
+      margin: 0 @gutter/4;
+
+      span,
+      a {
+        .border-radius();
+        display: inline-block;
+        font-size: 18px;
+        line-height: @gutter*1.5;
+        text-align: center;
+        width: @gutter*1.5;
+        border: 1px solid @gray4;
+
+        &.current {
+          border-color: @gray3;
+        }
+      }
+
+      a {
+        color: @gray2;
+        color: @theme-dark;
+
+        &:hover {
+          border-color: @theme;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+/* --- Next/Prev item --- */
+.article-nav {
+  .clearfix();
+  margin: @gutter*2 0 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  font-size: 18px;
+  line-height: 1.7777777778em;
+
+  div {
+    float: left;
+    width: 33.3333333%;
+    padding: (@gutter - 1) 0;
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-text-overflow: ellipsis;
+    -moz-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+  }
+
+  .overview {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    text-align: center;
+    padding-left: @gutter/2;
+    padding-right: @gutter/2;
+  }
+
+  .prev-post {
+    padding-right: @gutter/2;
+  }
+
+  .next-post {
+    text-align: right;
+    padding-left: @gutter/2;
   }
 }
 

@@ -1,0 +1,26 @@
+
+{% embed 'partials/base.html.twig' %}
+  {% set collection = page.collection() %}
+  {% set base_url = page.url %}
+  {% set feed_url = base_url %}
+
+  {% if base_url == '/' %}
+    {% set base_url = '' %}
+  {% endif %}
+
+  {% block content %}
+    {% include 'partials/postcontent.html.twig' %}
+
+    <div class="thoughts-list">
+      {% for child in page.collection %}
+        {% include 'partials/blog-item.html.twig' with {'page':child} %}
+      {% endfor %}
+    </div>
+
+    {% if config.plugins.pagination.enabled and collection.params.pagination %}
+      {% include 'partials/pagination.html.twig' with {'pagination':collection.params.pagination} %}
+    {% endif %}
+
+  {% endblock %}
+
+{% endembed %}
