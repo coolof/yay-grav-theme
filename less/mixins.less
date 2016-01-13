@@ -26,7 +26,8 @@
           ~"only screen and (-o-min-device-pixel-ratio: 3/2)",
           ~"only screen and (min-device-pixel-ratio: 1.5)";
 
-@layout-mobile: ~"screen and max-width(600px)";
+@layout-narrow: ~"only screen and (max-width: 900px)";
+@layout-mobile: ~"only screen and (max-width: 600px)";
 
 .clearfix() {
   &:after {

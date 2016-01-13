@@ -9,28 +9,32 @@
     {{ jscomments('disqus', { shortname: "yayse" }) }}
   {% endif %}
 
-  <nav class="article-nav">
-    {% set prev = page.prevSibling %}
-    {% set next = page.nextSibling %}
-    {% set overview = page.parent %}
+  {% set showNav = (page.isFirst and page.isLast) ? false : true %}
 
-    <div class="prev-post">
-      {% if page.isFirst == false and page.header.item_small != true %}
-        <a href="{{ next.url }}">{{ next.title }}</a>
-      {% else %}
-        <span>Detta är det senaste inlägget</span>
-      {% endif %}
-    </div>
+  {% if showNav > 0 %}
+    <nav class="article-nav">
+      {% set prev = page.prevSibling %}
+      {% set next = page.nextSibling %}
+      {% set overview = page.parent %}
 
-    <div class="overview"><a href="{{ overview.url }}">Visa alla</a></div>
+      <div class="prev-post">
+        {% if page.isFirst == false and page.header.item_small != true %}
+          <a href="{{ next.url }}">{{ next.title }}</a>
+        {% else %}
+          <span>Detta är det senaste inlägget</span>
+        {% endif %}
+      </div>
 
-    <div class="next-post">
-      {% if page.isLast == false %}
-        <a href="{{ prev.url }}">{{ prev.title }}</a>
-      {% else %}
-        <span>Detta är det första inlägget</span>
-      {% endif %}
-    </div>
-  </nav>
+      <div class="overview"><a href="{{ overview.url }}">Visa alla</a></div>
+
+      <div class="next-post">
+        {% if page.isLast == false %}
+          <a href="{{ prev.url }}">{{ prev.title }}</a>
+        {% else %}
+          <span>Detta är det första inlägget</span>
+        {% endif %}
+      </div>
+    </nav>
+  {% endif %}
 
 {% endblock %}
