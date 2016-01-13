@@ -14,4 +14,10 @@ $(document).ready(function() {
   $('.animated').click(function() {
     $(this).toggleClass('playing');
   });
+
+  /* Toggle grid */
+  $('.grid-toggle').click(function() {
+    $('body').toggleClass('grid-on');
+    return false;
+  });
 });

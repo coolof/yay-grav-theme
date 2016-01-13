@@ -38,7 +38,7 @@
   }
 }
 
-.layline-case-anim {
+article[role="article-content"] .layline-case-anim {
   .cf();
   position: relative;
   background-color: #eee;
@@ -50,7 +50,7 @@
     -webkit-transition: opacity 0.3s ease-in-out;
     -o-transition: opacity 0.3s ease-in-out;
     transition: opacity 0.3s ease-in-out;
-    content: 'Klicka för att spela';
+    content: 'Klicka för att spela/pausa';
     position: absolute;
     left: 0;
     width: 100%;
@@ -135,4 +135,25 @@
 /* Full width example */
 .full-width {
   .full-width(#ff00ff);
+}
+
+/* 50% ul lists */
+.list-50 {
+  .clearfix();
+  width: @text-width;
+  margin-bottom: @gutter;
+
+  ul {
+    float: left;
+    width: 50%;
+    margin: 0;
+  }
+}
+
+/* Page-grid */
+body.grid-on {
+  background-image: url(../img/grid@2x.png);
+  background-size: 128px 128px;
+  background-repeat: repeat;
+  background-position: top center;
 }

@@ -1,12 +1,18 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-	<div id="error">
-		<div>
-			<h1>Error {{ page.header.http_response_code }}</h1>
-			<p>
-				{{ page.content }}
-			</p>
-		</div>
+	<div class="error">
+		<header role="article-header">
+			<h1>Uh oh! 🙁</h1>
+			<div class="lead">{{ page.header.http_response_code }}</div>
+		</header>
+
+		<article role="article-content">
+			{% if page.header.http_response_code == '404' %}
+				<p>Sidan du letar efter verkar inte finnas. Om du tror detta är mitt fel så <a href="mailo:olle@yay.se">kontakta mig</a> gärna 😘.</p>
+				<p>The page you're looking for don't seem to exist. If you think this is an error on my part, please <a href="mailo:olle@yay.se">contact me</a> 😘.</p>
+			{% endif %}
+		</article>
+
 	</div>
 {% endblock %}

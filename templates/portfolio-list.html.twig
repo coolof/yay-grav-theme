@@ -11,8 +11,10 @@
 
   <div class="portfolio-list-more">
     <h2>Jag har även jobbat med</h2>
-    {% for child in page.collection if child.header.item_small %}
-      {% include 'partials/portfolio-item-small.html.twig' with {'page':child} %}
-    {% endfor %}
+    <div class="items">
+      {% for child in page.collection if child.header.item_small %}
+        {% include 'partials/portfolio-item-small.html.twig' with {'page':child} %}
+      {% endfor %}
+    </div>
   </div>
 {% endblock %}

@@ -13,7 +13,7 @@
     {% if header.robots %}
     <meta name="robots" content="{{ header.robots }}">
     {% endif %}
-    <link href='https://fonts.googleapis.com/css?family=Istok+Web:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600' rel='stylesheet' type='text/css'>
     <link rel="icon" type="image/png" href="{{ theme_url }}/img/logo.png">
 
     <title>{% if header.title %}{{ header.title }} - {{ page.header.subtitle }} | {% endif %}{{ site.title }}</title>
@@ -38,9 +38,9 @@
     {% endblock head %}
   </head>
 
-  {% set body_class = (page.root) ? page.slug : page.parent.slug %}
+  {% set body_class = page.header.body_class %}
 
-  <body class="page-{{ body_class }}">
+  <body {% if page.header.body_class %}class="{{ body_class }}"{% endif%}>
 
     {# include the header + navigation #}
     {% include 'partials/header.html.twig' %}
