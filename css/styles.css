@@ -293,6 +293,13 @@ code {
     font-size: 16px;
   }
 }
+@media only screen and (max-width: 600px) {
+  code {
+    font-size: 14px;
+    padding: 4px;
+    vertical-align: middle;
+  }
+}
 pre {
   margin: 0 0 32px;
   /* Fix highlight styles */
@@ -315,6 +322,15 @@ pre .hljs {
   pre code {
     font-size: 16px;
     line-height: 24px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  pre code {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  pre .hljs {
+    padding: 16px;
   }
 }
 img {

@@ -241,6 +241,11 @@ code {
   @media @layout-narrow {
     font-size: 16px;
   }
+  @media @layout-mobile {
+    font-size: 14px;
+    padding: @gutter/8;
+    vertical-align: middle;
+  }
 }
 pre {
   //max-width: @code-width;
@@ -264,6 +269,17 @@ pre {
     code {
       font-size: 16px;
       line-height: @gutter*0.75;
+    }
+  }
+
+  @media @layout-mobile {
+    code {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .hljs {
+      padding: @gutter/2;
     }
   }
 }
