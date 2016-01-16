@@ -123,6 +123,7 @@ h2 {
     font-size: 30px;
     line-height: @gutter;
     margin-bottom: @gutter/4;
+    margin-top: @gutter;
   }
 }
 
@@ -140,6 +141,7 @@ h3 {
   @media @layout-mobile {
     font-size: 22px;
     line-height: @gutter*0.75;
+    margin-top: @gutter;
   }
 }
 
@@ -152,6 +154,10 @@ h4 {
   @media @layout-narrow {
     font-size: 20px;
     line-height: @gutter*0.75;
+  }
+
+  @media @layout-mobile {
+    margin-top: @gutter;
   }
 }
 
@@ -263,6 +269,7 @@ pre {
   /* Fix highlight styles */
   .hljs {
     padding: @gutter;
+    -webkit-overflow-scrolling: touch;
   }
 
   @media @layout-narrow {
@@ -505,7 +512,22 @@ header[role="site-header"] {
       float: none;
       text-align: center;
       padding-top: @gutter*0.75;
+      font-size: 0;
+      line-height: 0;
+
+      .item {
+        margin: 0 @gutter*0.5;
+
+        a {
+          font-size: 18px;
+          line-height: 1.33333333em;
+        }
+      }
     }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .menu .item { margin: 0 @gutter*0.25; }
   }
 }
 
@@ -777,6 +799,13 @@ article[role="article-content"] {
 
   @media @layout-narrow {
     margin-top: @gutter*2.5;
+  }
+
+  @media @layout-mobile {
+    .row {
+      background-size: 24px auto;
+      padding-right: @gutter*1.5;
+    }
   }
 }
 

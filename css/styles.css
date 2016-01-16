@@ -168,6 +168,7 @@ h2 {
     font-size: 30px;
     line-height: 32px;
     margin-bottom: 8px;
+    margin-top: 32px;
   }
 }
 h3 {
@@ -186,6 +187,7 @@ h3 {
   h3 {
     font-size: 22px;
     line-height: 24px;
+    margin-top: 32px;
   }
 }
 h4 {
@@ -198,6 +200,11 @@ h4 {
   h4 {
     font-size: 20px;
     line-height: 24px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  h4 {
+    margin-top: 32px;
   }
 }
 p {
@@ -317,6 +324,7 @@ pre code {
 }
 pre .hljs {
   padding: 32px;
+  -webkit-overflow-scrolling: touch;
 }
 @media only screen and (max-width: 900px) {
   pre code {
@@ -552,6 +560,20 @@ header[role="site-header"] .menu .item.active a {
     float: none;
     text-align: center;
     padding-top: 24px;
+    font-size: 0;
+    line-height: 0;
+  }
+  header[role="site-header"] .menu .item {
+    margin: 0 16px;
+  }
+  header[role="site-header"] .menu .item a {
+    font-size: 18px;
+    line-height: 1.33333333em;
+  }
+}
+@media only screen and (max-width: 500px) {
+  header[role="site-header"] .menu .item {
+    margin: 0 8px;
   }
 }
 /* --------------------
@@ -792,6 +814,12 @@ article[role="article-content"] .case-top p {
 @media only screen and (max-width: 900px) {
   .thoughts-list {
     margin-top: 80px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .thoughts-list .row {
+    background-size: 24px auto;
+    padding-right: 48px;
   }
 }
 .pager {
@@ -1137,7 +1165,7 @@ article[role="article-content"] .layline-case-anim.playing li {
 }
 /* 50% ul lists */
 .list-50 {
-  width: 736px;
+  max-width: 736px;
   margin-bottom: 32px;
 }
 .list-50:after {
@@ -1149,6 +1177,16 @@ article[role="article-content"] .layline-case-anim.playing li {
   float: left;
   width: 50%;
   margin: 0;
+}
+@media only screen and (max-width: 500px) {
+  .list-50 ul {
+    float: none;
+    width: auto;
+    margin-bottom: 24px;
+  }
+  .list-50 ul:last-child {
+    margin-bottom: 0px;
+  }
 }
 /* Page-grid */
 body.grid-on {
