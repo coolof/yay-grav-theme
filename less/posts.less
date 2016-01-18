@@ -3,21 +3,27 @@
 ----------------------- */
 @-webkit-keyframes zoomin {
   0% {
-    -webkit-transform: scale(0);
+    -webkit-transform: scale(0) translate3d(0,0,0);
   }
   25% {
-    -webkit-transform: scale(0);
+    -webkit-transform: scale(0)  translate3d(0,0,0);
   }
   50% {
-    -webkit-transform: scale(1);
+    -webkit-transform: scale(1)  translate3d(0,0,0);
   }
   100% {
-    -webkit-transform: scale(1);
+    -webkit-transform: scale(1)  translate3d(0,0,0);
   }
 }
 @-moz-keyframes zoomin {
   0% {
     -moz-transform: scale(0);
+  }
+  25% {
+    -moz-transform: scale(0);
+  }
+  50% {
+    -moz-transform: scale(1);
   }
   100% {
     -moz-transform: scale(1);
@@ -25,16 +31,16 @@
 }
 @keyframes zoomin {
   0% {
-    transform: scale(0);
+    transform: scale(0)  translate3d(0,0,0);
   }
   25% {
-    transform: scale(0);
+    transform: scale(0)  translate3d(0,0,0);
   }
   50% {
-    transform: scale(1);
+    transform: scale(1)  translate3d(0,0,0);
   }
   100% {
-    transform: scale(1);
+    transform: scale(1)  translate3d(0,0,0);
   }
 }
 
@@ -46,12 +52,21 @@ article[role="article-content"] .layline-case-anim {
   margin: @gutter 0px;
   max-width: none;
 
+  @media @layout-narrow {
+    padding: @gutter*0.5;
+  }
+
+  @media @layout-mobile {
+    padding: @gutter*0.25;
+  }
+
   &:before {
     -webkit-transition: opacity 0.3s ease-in-out;
     -o-transition: opacity 0.3s ease-in-out;
     transition: opacity 0.3s ease-in-out;
     content: 'Klicka för att spela/pausa';
     position: absolute;
+    z-index: 50;
     left: 0;
     width: 100%;
     top: 50%;
@@ -64,6 +79,10 @@ article[role="article-content"] .layline-case-anim {
     line-height: 1.2em;
     text-align: center;
     cursor: pointer;
+
+    @media @layout-mobile {
+      font-size: @gutter;
+    }
   }
 
   li {
@@ -74,13 +93,17 @@ article[role="article-content"] .layline-case-anim {
     float: left;
     width: 25%;
     opacity: 0.5;
+    -webkit-backface-visibility: visible;
+    -moz-backface-visibility: visible;
+    -ms-backface-visibility: visible;
+    backface-visibility: visible;
 
     -webkit-transform: scale(0);
     -webkit-animation: zoomin 1.2s @easing infinite alternate;
     -webkit-animation-fill-mode: forwards;
 
-    -moz-transform: scale(1)!important;
-    -moz-animation: none!important;
+    -moz-transform: scale(0);
+    -moz-animation: zoomin 1.2s @easing infinite alternate;
     -moz-animation-fill-mode: forwards;
 
     transform: scale(0);
@@ -91,30 +114,42 @@ article[role="article-content"] .layline-case-anim {
     -o-animation-play-state: paused;
     animation-play-state: paused;
 
+    img {
+      display: block;
+    }
+
     &:nth-child(1) {
       -webkit-animation-delay: 0s;
+      -moz-animation-delay: 0s;
     }
     &:nth-child(2) {
       -webkit-animation-delay: 0.1s;
+      -moz-animation-delay: 0.1s;
     }
     &:nth-child(3) {
       -webkit-animation-delay: 0.2s;
+      -moz-animation-delay: 0.2s;
     }
     &:nth-child(4) {
       -webkit-animation-delay: 0.3s;
+      -moz-animation-delay: 0.3s;
     }
 
     &:nth-child(5) {
       -webkit-animation-delay: 0.1s;
+      -moz-animation-delay: 0.1s;
     }
     &:nth-child(6) {
       -webkit-animation-delay: 0.2s;
+      -moz-animation-delay: 0.2s;
     }
     &:nth-child(7) {
       -webkit-animation-delay: 0.3s;
+      -moz-animation-delay: 0.3s;
     }
     &:nth-child(8) {
       -webkit-animation-delay: 0.4s;
+      -moz-animation-delay: 0.4s;
     }
   }
 

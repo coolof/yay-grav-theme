@@ -1030,21 +1030,27 @@ footer[role="site-footer"] .footer-logo {
 ----------------------- */
 @-webkit-keyframes zoomin {
   0% {
-    -webkit-transform: scale(0);
+    -webkit-transform: scale(0) translate3d(0, 0, 0);
   }
   25% {
-    -webkit-transform: scale(0);
+    -webkit-transform: scale(0) translate3d(0, 0, 0);
   }
   50% {
-    -webkit-transform: scale(1);
+    -webkit-transform: scale(1) translate3d(0, 0, 0);
   }
   100% {
-    -webkit-transform: scale(1);
+    -webkit-transform: scale(1) translate3d(0, 0, 0);
   }
 }
 @-moz-keyframes zoomin {
   0% {
     -moz-transform: scale(0);
+  }
+  25% {
+    -moz-transform: scale(0);
+  }
+  50% {
+    -moz-transform: scale(1);
   }
   100% {
     -moz-transform: scale(1);
@@ -1052,16 +1058,16 @@ footer[role="site-footer"] .footer-logo {
 }
 @keyframes zoomin {
   0% {
-    transform: scale(0);
+    transform: scale(0) translate3d(0, 0, 0);
   }
   25% {
-    transform: scale(0);
+    transform: scale(0) translate3d(0, 0, 0);
   }
   50% {
-    transform: scale(1);
+    transform: scale(1) translate3d(0, 0, 0);
   }
   100% {
-    transform: scale(1);
+    transform: scale(1) translate3d(0, 0, 0);
   }
 }
 article[role="article-content"] .layline-case-anim {
@@ -1076,12 +1082,23 @@ article[role="article-content"] .layline-case-anim:after {
   display: table;
   clear: both;
 }
+@media only screen and (max-width: 900px) {
+  article[role="article-content"] .layline-case-anim {
+    padding: 16px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  article[role="article-content"] .layline-case-anim {
+    padding: 8px;
+  }
+}
 article[role="article-content"] .layline-case-anim:before {
   -webkit-transition: opacity 0.3s ease-in-out;
   -o-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
   content: 'Klicka för att spela/pausa';
   position: absolute;
+  z-index: 50;
   left: 0;
   width: 100%;
   top: 50%;
@@ -1095,6 +1112,11 @@ article[role="article-content"] .layline-case-anim:before {
   text-align: center;
   cursor: pointer;
 }
+@media only screen and (max-width: 600px) {
+  article[role="article-content"] .layline-case-anim:before {
+    font-size: 32px;
+  }
+}
 article[role="article-content"] .layline-case-anim li {
   display: block;
   position: relative;
@@ -1103,11 +1125,15 @@ article[role="article-content"] .layline-case-anim li {
   float: left;
   width: 25%;
   opacity: 0.5;
+  -webkit-backface-visibility: visible;
+  -moz-backface-visibility: visible;
+  -ms-backface-visibility: visible;
+  backface-visibility: visible;
   -webkit-transform: scale(0);
   -webkit-animation: zoomin 1.2s cubic-bezier(0.77, 0, 0.175, 1) infinite alternate;
   -webkit-animation-fill-mode: forwards;
-  -moz-transform: scale(1) !important;
-  -moz-animation: none!important;
+  -moz-transform: scale(0);
+  -moz-animation: zoomin 1.2s cubic-bezier(0.77, 0, 0.175, 1) infinite alternate;
   -moz-animation-fill-mode: forwards;
   transform: scale(0);
   animation: zoomin 1.2s cubic-bezier(0.77, 0, 0.175, 1) infinite alternate;
@@ -1116,29 +1142,40 @@ article[role="article-content"] .layline-case-anim li {
   -o-animation-play-state: paused;
   animation-play-state: paused;
 }
+article[role="article-content"] .layline-case-anim li img {
+  display: block;
+}
 article[role="article-content"] .layline-case-anim li:nth-child(1) {
   -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s;
 }
 article[role="article-content"] .layline-case-anim li:nth-child(2) {
   -webkit-animation-delay: 0.1s;
+  -moz-animation-delay: 0.1s;
 }
 article[role="article-content"] .layline-case-anim li:nth-child(3) {
   -webkit-animation-delay: 0.2s;
+  -moz-animation-delay: 0.2s;
 }
 article[role="article-content"] .layline-case-anim li:nth-child(4) {
   -webkit-animation-delay: 0.3s;
+  -moz-animation-delay: 0.3s;
 }
 article[role="article-content"] .layline-case-anim li:nth-child(5) {
   -webkit-animation-delay: 0.1s;
+  -moz-animation-delay: 0.1s;
 }
 article[role="article-content"] .layline-case-anim li:nth-child(6) {
   -webkit-animation-delay: 0.2s;
+  -moz-animation-delay: 0.2s;
 }
 article[role="article-content"] .layline-case-anim li:nth-child(7) {
   -webkit-animation-delay: 0.3s;
+  -moz-animation-delay: 0.3s;
 }
 article[role="article-content"] .layline-case-anim li:nth-child(8) {
   -webkit-animation-delay: 0.4s;
+  -moz-animation-delay: 0.4s;
 }
 article[role="article-content"] .layline-case-anim.playing:before {
   opacity: 0;
