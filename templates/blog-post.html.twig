@@ -18,20 +18,20 @@
       {% set overview = page.parent %}
 
       <div class="prev-post">
-        {% if page.isFirst == false and page.header.item_small != true %}
-          <a href="{{ next.url }}">{{ next.title }}</a>
+        {% if page.isLast == false and page.header.item_small != true %}
+          <a href="{{ prev.url }}">{{ prev.title }}</a>
         {% else %}
-          <span>Detta är det senaste inlägget</span>
+          <span>Detta är det första inlägget</span>
         {% endif %}
       </div>
 
       <div class="overview"><a href="{{ overview.url }}">Visa alla</a></div>
 
       <div class="next-post">
-        {% if page.isLast == false %}
-          <a href="{{ prev.url }}">{{ prev.title }}</a>
+        {% if page.isFirst == false %}
+          <a href="{{ next.url }}">{{ next.title }}</a>
         {% else %}
-          <span>Detta är det första inlägget</span>
+          <span>Detta är det senaste inlägget</span>
         {% endif %}
       </div>
     </nav>

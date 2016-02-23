@@ -1187,18 +1187,20 @@ article[role="article-content"] .layline-case-anim.playing li {
   opacity: 1;
 }
 /* Full width example */
-.full-width {
+.full-width-example {
   position: relative;
+  padding: 64px 0;
 }
-.full-width:before {
+.full-width-example:before {
   content: "";
   position: absolute;
   z-index: -1;
   left: 50%;
   top: 0px;
   width: 100vw;
+  height: 100%;
   margin-left: -50vw;
-  background-color: #ff00ff;
+  background-color: #fff08e;
 }
 /* 50% ul lists */
 .list-50 {
