@@ -22,6 +22,16 @@
       <p>{{ page.header.background }}{{page.header.my_role}}</p>
     {% endif %}
 
+    {% set link_title = page.header.link_title ? page.header.link_title : 'Besök sidan' %}
+    {% if page.header.link %}
+      <a href="{{ page.header.link }}" class="button button-small i-arrow-right" target="_blank">{{ link_title }}</a>
+    {% endif %}
+
     {{ page.content }}
+
+    {% if page.header.link %}
+      <a href="{{ page.header.link }}" class="button button-small i-arrow-right" target="_blank">{{ link_title }}</a>
+    {% endif %}
+
   </article>
 {% endif %}

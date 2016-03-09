@@ -404,12 +404,18 @@ p.img-border img {
   width: 8px;
   background: linear-gradient(rgba(255, 255, 255, 0), #ffffff);
 }
+.button:hover {
+  text-decoration: none;
+}
 .button.button-full {
   width: 100%;
 }
 .button.button-medium {
   min-width: 65.2173913%;
   max-width: 65.2173913%;
+}
+.button.button-small {
+  max-width: 512px;
 }
 .button.i-arrow-right {
   background: transparent url(../img/arrow-green-right.svg) no-repeat right center;
